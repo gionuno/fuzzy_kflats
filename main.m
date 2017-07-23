@@ -21,7 +21,7 @@ Z = Y ./ repmat(sqrt(sX),[size(X,1),1]);
 
 K = 10;
 D = 10;
-[W,b] = fuzzy_kflats_clustering(Z,K,D,1.5,25);
+[W,b] = fuzzy_kflats_clustering(Z,K,D,1.25,25);
 
 figure;
 for k = 1:K

@@ -14,7 +14,7 @@ function [W,b] = fuzzy_kflats_clustering(X,K,D,g,T)
         disp(t);
         for k = 1:K
             R = X*reshape(W(k,:,:),[M,D])-repmat(b(k,:),[N,1]);
-            C(:,k) = arrayfun(@(b) (norm(R(b,k,:)).^2+1e-8).^(-1.0/(g-1.0)),1:N);
+            C(:,k) = arrayfun(@(b) (norm(R(b,:)).^2+1e-8).^(-1.0/(g-1.0)),1:N);
         end
         sC = sum(C,2);
         p = C ./ repmat(sC,[1,K]);
